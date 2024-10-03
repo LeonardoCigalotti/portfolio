@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="16x16"  href="./assets/favicon-16x16.png">
+  <title>Leonardo Cigalotti</title>
+
+  <!--- link-css --->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/experience.css">
+  <link rel="stylesheet" href="css/projects.css">
+  <link rel="stylesheet" href="css/skills.css">
+  <link rel="stylesheet" href="css/education.css">
+  <link rel="stylesheet" href="css/contact.css">
+
+  <!--- link-fonts --->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+
+  <!-- link js -->
+  <script src="js/script.js"></script>
+
+   <!-- SEO -->
+   <meta name="description" content="Meu Portfólio - Leonardo Cigalotti"> 
+
+   <!-- SMO -->
+   <meta property="og:title" content="Portfólio - Leonardo Cigalotti" >
+   <meta property="og:site_name" content="Portfólio de Leonardo Cigalotti">
+   <meta property="og:description" content="Sou desenvolvedor web full-stack. Aqui você vai encontrar meus principais projetos. ">
+   <meta property="og:url" content="https://leonardoCigalotti.github.io/portfolio/">
+   <meta property="og:image/type">
+</head>
+<body id="top">
+
+<!-- Sidebar -->
+  <nav class="sidebar">
+        <!-- Profile picture -->
+        <div class="profile-picture">
+            <a href="#home">
+                <img src="./assets/Me.jpg" alt="Foto de perfil de Leonardo" class="profile-img">
+            </a>
+        </div>
+
+        <!-- Menu -->
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Social links -->
+        <div class="social-links-container">
+            <div class="social-link">
+                <a href="https://github.com/LeonardoCigalotti" target="_blank">
+                    <img src="./assets/logo-github-black.svg" alt="GitHub" class="social-icon black-icon"> 
+                    <img src="./assets/logo-github-white.svg" alt="GitHub" class="social-icon white-icon"> 
+                    <img src="./assets/logo-github-orange.svg" alt="GitHub" class="social-icon orange-icon"> 
+                </a>
+            </div>
+            <div class="social-link">
+                <a href="https://www.linkedin.com/in/leonardo-cigalotti-03a43022a" target="_blank">
+                    <img src="./assets/logo-linkedin-black.svg" alt="LinkedIn" class="social-icon black-icon"> 
+                    <img src="./assets/logo-linkedin-white.svg" alt="LinkedIn" class="social-icon white-icon"> 
+                    <img src="./assets/logo-linkedin-orange.svg" alt="LinkedIn" class="social-icon orange-icon"> 
+                </a>
+            </div>
+        </div>
+  </nav>
+
+    <!-- Toogle button dark-mode -->
+    <div id="switch" onclick="buttonMode()">
+        <button></button> 
+        <span></span>
+    </div>
+
+    <!-- Button Navbar -->
+    <button id="navToggle" class="nav-button">
+        <img src="./assets/menu-icon.png" alt="Menu Icon" />
+    </button>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="suspended-navbar hidden">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Home section -->
+        <div id="home" class="section">
+            <section class="home-section">
+                <div class="left">
+                    <h1>Hello, I'm Leonardo Cigalotti</h1>
+                    <div class="typing-effect"></div>
+                    <a href="#contact" class="contact-button">Contact Me</a>
+                </div>
+                <div class="right">
+                    <div class="vscode-window">
+                        <div class="vscode-header">
+                            <div class="vscode-buttons">
+                                <div class="vscode-button close"></div>
+                                <div class="vscode-button minimize"></div>
+                                <div class="vscode-button maximize"></div>
+                            </div>
+                            <div class="vscode-title">untitled-1</div>
+                        </div>
+                        <pre class="code-snippet">
+                            <code class="php-code">
+                                <span class="keyword">public</span> <span class="keyword">function</span> <span class="function">coder</span><span class="braces">(</span><span class="braces">)</span> <span class="braces">{</span>
+                                    <span class="keyword">const</span> <span class="variable">name</span> = <span class="string">'Leonardo Cigalotti'</span>; 
+                                    <span class="keyword">const</span> <span class="variable">skills</span> = <span class="string">['</span><span class="string">PHP</span><span class="string">', '</span><span class="string">JavaScript</span><span class="string">', '</span><span class="string">C#</span><span class="string">', '</span><span class="string">Java</span><span class="string">', '</span><span class="string">TypeScript</span><span class="string">'];</span>
+                                    <span class="keyword">const</span> <span class="variable">frameworks</span> = <span class="string">['</span><span class="string">Laravel</span><span class="string">', '</span><span class="string">Vue.js</span><span class="string">', '</span><span class="string">Node.js</span><span class="string">', '</span><span class="string">React Native</span><span class="string">'];</span>
+                                    <span class="keyword">const</span> <span class="variable">DBMS</span> = <span class="string">['</span><span class="string">MySQL</span><span class="string">', '</span><span class="string">MySQL Server</span><span class="string">'];</span>
+                                    <span class="keyword">const</span> <span class="variable">quickLearner</span> = <span class="boolean">true</span>;
+                                <span class="braces">}</span>
+                            </code>
+                        </pre>
+                    </div>
+                </div> 
+            </section> 
+        </div>
+
+        <!-- About section -->
+        <div id="about" class="section">
+            <div class="title-bar">About</div>
+            <section class="about-section">
+            <div class="about-photo">
+                <img src="./assets/Me.jpg" alt="Foto de perfil">
+            </div>
+            <div class="about-text">
+                <h2>Who am i?</h2>
+                <p>Hello! My name is Leonardo Moreira Cigalotti and I live in Brazil. Since 2021, I have been gaining experience in languages such as Php, Java, JavaScript, C#, and working with web technologies like HTML and CSS. I am passionate about programming and have a special interest in Artificial Intelligence.</p>
+                <p>I have a strong curiosity and a desire to learn, which allows me to quickly absorb new knowledge. I am always looking for opportunities to stand out, improve my skills, and explore new technologies that can positively impact the world.</p>
+            </div>
+            </section>
+        </div>
+
+        <!-- Experience section -->
+        <div id="experience" class="section">
+            <div class="title-bar">Experience</div>
+            <section class="experience-section">
+                <div class="experience-card">
+                    <div class="experience-header">
+                    <a href="https://www.tmax.com.br/" target="_blank" class="company-link">
+                        <img src="./assets/logo-tmax.png" alt="Logo Empresa" class="company-logo">
+                        <span class="company-name">TMAX Tecnologia</span>
+                    </a>
+                    <span class="job-title">Developer Apprentice</span>
+                    </div>
+
+                    <div class="separator"></div>
+
+                    <div class="experience-body">
+                    <ul>
+                        <li>Worked with PHP, Laravel, and Vue.js to develop web applications.</li>
+                        <li>Collaborated with cross-functional teams to design and implement solutions.</li>
+                        <li>Integrated third-party APIs and developed RESTful services.</li>
+                        <li>Knowledge in Java for Backend Development.</li>
+                        <li>Proficiency in C# for Android Development.</li>
+                        <li>Experience with React Native for Android Development</li>
+                    </ul>
+                    </div>
+                    <div class="experience-footer">
+                    <p>2021 - Present</p>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                    <a href="https://braganca.sp.gov.br/secretarias/educacao" target="_blank" class="company-link">
+                        <img src="./assets/logo-prefeitura-braganca.png" alt="Logo Empresa" class="company-logo">
+                        <span class="company-name">Secretaria de Educação de Bragança Paulista</span>
+                    </a>
+                    <span class="job-title">IT Support Intern</span>
+                    </div>
+                    
+                    <div class="separator"></div>
+                
+                    <div class="experience-body">
+                    <ul>
+                        <li>Assisted staff with computer-related issues in the office.</li>
+                        <li>Performed Windows installation and troubleshooting.</li>
+                        <li>Managed network infrastructure within the department.</li>
+                        <li>Standardized school tablets for students and staff.</li>
+                        <li>Handled computer formatting and system setup.</li>
+                    </ul>
+                    </div>
+                    <div class="experience-footer">
+                    <p>Jun/2020 - Dec/2020</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Projects section -->
+        <div id="projects" class="section">
+            <div class="title-bar">Projects</div>
+            <div class="filter-buttons">
+            <button class="filter-button" data-filter="all">All</button>
+            <button class="filter-button" data-filter="web">Web</button>
+            <button class="filter-button" data-filter="projects">Projects</button>
+            </div>
+            <section class="projects-section">
+                <div class="project-card" data-category="web-app">
+                    <h3 class="project-title">Pokedex</h3>
+                    <div class="project-image-container">
+                        <img src="./assets/pokedex-preview.png" alt="pokedex">
+                        <div class="overlay">
+                            <img class="information" src="./assets/informacao.png" />
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="web-app">
+                    <h3 class="project-title">Hangman</h3>
+                    <div class="project-image-container">
+                        <img src="./assets/hangman-preview.png" alt="hangman">
+                        <div class="overlay">
+                            <img class="information" src="./assets/informacao.png" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Modal -->
+            <div id="project-modal" class="modal">
+                <div class="modal-content">
+                    <span class="modal-close">&times;</span>
+                    <h2 class="modal-title"></h2>
+                    <p class="modal-description"></p>
+                    <div class="modal-languages"></div>
+                    <div class="modal-footer">
+                        <a href="#" class="modal-link" id="github-link" target="_blank">GitHub</a>
+                        <a href="#" class="modal-link" id="site-link" target="_blank">Website</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills section -->
+        <div id="skills" class="section">
+            <div class="title-bar">Skills</div>
+            <section class="skills-section">
+                <div class="skills-category">
+                    <h3>Languages and Databases</h3>
+                    <div class="skills-horizontal" id="languages-databases">
+                        <div class="skill-card">
+                            <img src="./assets/php.png" alt="php" class="skill-img">
+                            <p class="skill-name">PHP</p>
+                        </div>
+                        <div class="skill-card">
+                            <img src="./assets/javascript.svg" alt="javascript" class="skill-img">
+                            <p class="skill-name">JavaScript</p>
+                        </div>
+                        <div class="skill-card">
+                            <img src="./assets/html.svg" alt="html" class="skill-img">
+                            <p class="skill-name">HTML</p>
+                        </div>
+                        <div class="skill-card">
+                            <img src="./assets/css.svg" alt="css" class="skill-img">
+                            <p class="skill-name">CSS</p>
+                        </div>
+                        <div class="skill-card">
+                            <img src="./assets/c-sharp.png" alt="c-sharp" class="skill-img">
+                            <p class="skill-name">C#</p>
+                        </div>
+                        <div class="skill-card">
+                            <img src="./assets/java.svg" alt="java" class="skill-img">
+                            <p class="skill-name">Java</p>
+                        </div>
+                        <div class="skill-card">
+                            <img src="./assets/mysql.svg" alt="mysql" class="skill-img">
+                            <p class="skill-name">MySQL</p>
+                        </div>
+                        <div class="skill-card">
+                            <img src="./assets/sql-server.png" alt="sql-server" class="skill-img">
+                            <p class="skill-name">SQL Server</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="skills-category">
+                    <h3>Frameworks</h3>
+                    <div class="skills-horizontal" id="frameworks">
+                        <div class="skill-card">
+                            <img src="./assets/laravel.png" alt="laravel" class="skill-img">
+                            <p class="skill-name">Laravel</p>
+                        </div>
+                        <div class="skill-card">
+                            <img src="./assets/lumen.png" alt="lumen" class="skill-img">
+                            <p class="skill-name">Lumen</p>
+                        </div>
+                        <div class="skill-card">
+                            <img src="./assets/vuejs.png" alt="vuejs" class="skill-img">
+                            <p class="skill-name">Vue.JS</p>
+                        </div>
+                        <div class="skill-card">
+                            <img src="./assets/nodejs.svg" alt="nodejs" class="skill-img">
+                            <p class="skill-name">Node.JS</p>
+                        </div>
+                        <div class="skill-card">
+                            <img src="./assets/react.png" alt="react" class="skill-img">
+                            <p class="skill-name">React Native</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Others</h3>
+                    <div class="skills-horizontal" id="others">
+                        <div class="skill-card">
+                            <img src="./assets/git.svg" alt="git" class="skill-img">
+                            <p class="skill-name">Git</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Educatin section -->
+        <div id="education" class="section">
+            <div class="title-bar">Education</div>
+            <section class="education-section">
+                <div class="education-card">
+                    <div class="year">2024 - Present </div>
+                    <div class="course">MBA in Artificial Intelligence and Analytics</div>
+                    <a href="https://www.cruzeirodosulvirtual.com.br/" target="_blank" class="college-link">
+                        <img src="./assets/logo-cruzeiro-do-sul.svg" alt="Cruzeiro do sul Logo" class="college-logo">
+                        Cruzeiro do Sul Virtual
+                    </a>
+                </div>
+
+                <div class="education-card">
+                    <div class="year">2019 - 2021</div>
+                    <div class="course">Technologist in Information Technology Management</div>
+                    <a href="https://www.fatecbpaulista.edu.br/" target="_blank" class="college-link">
+                        <img src="./assets/logo-fatec.png" alt="FATEC Logo" class="college-logo">
+                        FATEC Jornalista Omair Fagundes de Oliveira
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact section -->
+        <div id="contact" class="section">
+            <div class="title-bar">Contact Me</div>
+            <section class="contact-section"> 
+                <div class="contact-content"> <!-- Div para organizar o conteúdo -->
+                    <p>If you have any questions or would like to get in touch, feel free to reach out. I look forward to connecting with you!</p>
+                    <form action="https://formspree.io/f/xpwavkae" method="POST">
+                        <div>
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div>
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>2024 - Copyright © Leonardo Cigalotti</p>
+        </footer>  
+    </main>    
+</body>
+</html>

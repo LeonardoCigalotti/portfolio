@@ -1,0 +1,85 @@
+/* Education styles */
+.education-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; 
+    justify-content: center;   
+}
+
+.education-card {
+    flex-direction: column; 
+    background-color: rgb(191, 175, 175); 
+    color: var(--text-color); 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    padding: 30px; 
+    margin-bottom: 20px; 
+    font-family: var(--font-rounded); 
+    min-width: 1200px;
+}
+
+.education-header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.college-link {
+    text-decoration: none; 
+    color: var(--text-color); 
+    display: flex; 
+    align-items: center; 
+}
+
+.college-link:hover {
+    color: var(--highlight-color); 
+}
+
+.college-logo {
+    width: 70px; 
+    margin-right: 10px; 
+}
+
+.year {
+    font-size: 1em; 
+    font-weight: bold; 
+    text-align: center;
+}
+
+.course {
+    font-size: 1.7em; 
+    margin: 10px 0px;
+}
+
+@media screen and (min-width: 720px) and (max-width: 1023px) {
+    .education-card {
+        min-width: 800px;
+    }
+}
+
+@media screen and (min-width: 720px) and (max-width: 1020px) {
+    .education-card {
+        min-width: none;
+        text-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 719px) {
+    .education-card { 
+        padding: 20px; 
+        min-width: none;
+    }
+
+    .college-logo {
+        width: 30px; 
+    }
+
+    .year {
+        font-size: 0.9em; 
+    }
+
+    .course {
+        font-size: 1em; 
+        color: var(--highlight-color);
+    }
+}

@@ -1,0 +1,157 @@
+/* Home section styles */
+.home {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr; 
+  padding: 5%;
+  height: 100vh; 
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 50%; 
+}
+
+.left h1 {
+  font-family: var(--font-rounded);
+  font-size: 2rem; 
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.typing-effect {
+  font-family: var(--font-rounded);
+  font-size: 2rem; 
+  font-weight: bold;
+}
+
+.contact-button {
+  display: inline-block;
+  background-color: #FFA500; 
+  color: black; 
+  padding: 12px 24px; 
+  font-size: 18px;
+  font-family: var(--font-rounded); 
+  border: none;
+  border-radius: 30px; 
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 20px; 
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.contact-button:hover {
+  background-color: #FF8C00; 
+  transform: translateY(-3px); 
+}
+
+/* Visual Studio Code */
+.right {
+  padding: 20px;
+}
+
+.vscode-window {
+  background-color: var(--visual-studio-window);
+  color: var(--text-color-visual-window);
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.1);
+}
+
+.vscode-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.vscode-buttons {
+  display: flex;
+  margin-right: auto;
+}
+
+.vscode-button {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-right: 8px;
+  cursor: default;
+}
+
+.close {
+  background-color: #ff5f57; 
+}
+
+.minimize {
+  background-color: #ffbd2e; 
+}
+
+.maximize {
+  background-color: #27c93f; 
+}
+
+.vscode-title {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.code-snippet {
+  padding: 10px;
+  font-family: 'Courier New', monospace;
+  background-color: var(--visual-studio); 
+  border-radius: 0 0 5px 5px;
+  overflow: auto;
+}
+
+.code-snippet code {
+  display: block;
+  color: var(--visual-studio-equal);
+}
+
+.keyword {
+  color: var(--visual-studio-keyword); 
+  font-weight: bold;
+}
+
+.string {
+  color: var(--visual-studio-string); 
+}
+
+.variable {
+  color: var(--visual-studio-variable); 
+}
+
+.function {
+  color: var(--visual-studio-function); 
+}
+
+.boolean {
+  color: var(--visual-studio-string); 
+}
+
+.braces {
+  color: var(--visual-studio-braces); 
+}
+
+@media screen and (min-width: 720px) and (max-width: 1023px) {
+  .left {
+    display: block !important;
+    align-items: none !important;
+    flex-direction: row !important;
+    text-align: center !important;
+    margin-left: 270px !important;
+    margin-top: 100px !important;
+  }
+
+  .right {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 719px) {
+  .right {
+      display: none;
+  }
+}
