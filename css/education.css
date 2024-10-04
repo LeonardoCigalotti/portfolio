@@ -15,7 +15,7 @@
     padding: 30px; 
     margin-bottom: 20px; 
     font-family: var(--font-rounded); 
-    min-width: 1200px;
+    min-width: 1000px;
 }
 
 .college-link {
@@ -52,32 +52,32 @@
     margin: 10px 0;
 }    
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1200px) {
     .education-section {
         display: grid;  
     }
     
     .education-card {
         border-radius: 50px; 
-        min-width: 1000px;
+        min-width: 0px;
     }
     
     .college-link {
-        font-size: 3em; 
+        font-size: 1em; 
     }
     
     .college-logo {
-        width: 200px; 
+        width: 100px; 
         margin-right: 4%;
     }
     
     .year {
-        font-size: 3em; 
+        font-size: 1.5em; 
     }
     
     .course {
         text-align: center;
-        font-size: 3.7em; 
+        font-size: 1.9em; 
     }
     
     .separator-college {

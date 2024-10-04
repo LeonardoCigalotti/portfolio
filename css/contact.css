@@ -61,25 +61,25 @@
     transition: background-color 0.3s;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1200px) {
     .contact-section {
         max-width: 900px;
     }
     
     .contact-content p {
-        font-size: 3rem;
+        font-size: 1.5rem;
     }
     
     .contact-section label {
-        font-size: 3rem;
+        font-size: 2rem;
     }
     
     .contact-section input, 
     .contact-section textarea {
-        font-size: 3rem;
+        font-size: 2rem;
     }
     
     .contact-section button {
-        font-size: 4rem;
+        font-size: 2rem;
     }
 }

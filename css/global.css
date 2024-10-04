@@ -56,7 +56,7 @@ body {
     padding: 0;
     min-height: 100vh; 
     overflow-y: auto; 
-    min-width: 1510px; 
+    min-width: 1300px; 
 }
 
 body.dark-mode {
@@ -74,7 +74,7 @@ section {
 }
 
 main {
-    margin-left: 100px; 
+    margin-left: 70px; 
     overflow: hidden;
 }
 
@@ -85,7 +85,6 @@ main {
     font-size: 1.5em;
     border-top: 3px solid var(--highlight-color);
     width: 100%;
-    left: 7%;
 }
 
 /* Switch dark-light mode */
@@ -124,7 +123,7 @@ footer {
     color: var(--text-color)
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1200px) {
     html {
         overflow-x: unset; 
         overflow-y: unset;
@@ -140,23 +139,23 @@ footer {
     }
 
     section {
-        min-height: 700px; 
+        min-height: 500px; 
     }
 
     .title-bar {
-        padding: 15px;
+        padding: 10px;
         text-align: center;
-        font-size: 4em;
+        font-size: 2em;
         border-top: 5px solid var(--highlight-color);
     }
     
     #switch button {
-        width: 130px; 
-        height: 130px;
+        width: 70px; 
+        height: 70px;
     }
     
     footer {
-        font-size: 3em;
+        font-size: 1.4em;
     }
 }
 

@@ -54,24 +54,24 @@
     transform: scale(1.05);
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1200px) {
     .skills-category h3 {
-        font-size: 4.5rem;
+        font-size: 3rem;
     }
 
     .skill-card {
-        width: 350px; 
+        width: 300px; 
         margin: 3%;
         border-radius: 50px;
     }
 
     .skill-card img {
         padding: 5%;
-        width: 150px;         
-        height: 150px;       
+        width: 120px;         
+        height: 120px;       
     }
 
     .skill-card p {
-        font-size: 3rem;
+        font-size: 1.9rem;
     }
 }
