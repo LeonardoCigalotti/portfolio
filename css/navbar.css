@@ -182,7 +182,6 @@ body.dark-mode .social-link:hover img.orange-icon {
         color: var(--text-color);
         text-decoration: none;
     }
-
     .suspended-navbar a:hover {
         background-color: var(--sidebar-border-color);
     }
