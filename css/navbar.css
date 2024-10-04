@@ -132,7 +132,7 @@ body.dark-mode .social-link:hover img.orange-icon {
     opacity: 1;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 600px) {
     .sidebar {
         display: none;
     }
@@ -192,6 +192,67 @@ body.dark-mode .social-link:hover img.orange-icon {
         height: 3px;
         background-color: var(--visual-studio-window);
         margin: 15px auto;
+    }
+
+    .hidden {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1200px){
+    .sidebar {
+        display: none;
+    }
+
+    .nav-button {
+        border: none;
+        background-color: transparent;
+        padding: 10px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 2%;
+        position: fixed;
+        top: 1.1%;  
+    }
+
+    .nav-button img {
+        width: 65px; 
+        height: 65px;
+    }
+    
+    .suspended-navbar {
+        position: fixed;
+        top: 5.1%;  
+        left: 10%; 
+        background-color: var(--sidebar-bg-color);
+        border-radius: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .suspended-navbar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-around; /* Espaço entre os itens */
+    }
+
+    .suspended-navbar li {
+        text-align: center;
+        font-size: 1.3em;
+    }
+    
+    .suspended-navbar a {
+        display: block;
+        padding: 10px;
+        color: var(--text-color);
+        text-decoration: none;
+    }
+    
+    .suspended-navbar a:hover {
+        background-color: var(--sidebar-border-color);
     }
 
     .hidden {
