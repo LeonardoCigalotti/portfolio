@@ -331,7 +331,7 @@ function openSite(url: string) {
 
 .custom-tabs :deep(.q-tab--active) {
   background: var(--q-primary);
-  columns: white !important;
+  color: white !important;
   box-shadow: 0 4px 12px rgba(251, 162, 37, 0.3);
   transform: translateY(-2px);
 }
