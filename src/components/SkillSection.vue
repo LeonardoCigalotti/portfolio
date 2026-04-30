@@ -157,7 +157,7 @@ function getColor(name: string): string {
 .skill-name {
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--text-primary, #333);
+  color: var(--color-text, #333);
   text-align: center;
   line-height: 1.3;
 }

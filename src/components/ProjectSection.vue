@@ -2,12 +2,14 @@
   <section id="project" class="section column">
     <div class="container">
 
-      <q-tabs v-model="filter" class="q-mb-xl custom-tabs" align="center" active-color="primary" indicator-color="primary">
-        <q-tab :label="$t('all')" name="all" />
-        <q-tab :label="$t('frontend')" name="frontend" />
-        <q-tab :label="$t('backend')" name="backend" />
-        <q-tab :label="$t('mobile')" name="mobile" />
-      </q-tabs>
+      <div class="tabs-wrapper">
+        <q-tabs v-model="filter" class="q-mb-xl custom-tabs" align="center" active-color="primary" indicator-color="primary">
+          <q-tab :label="$t('all')" name="all" />
+          <q-tab :label="$t('frontend')" name="frontend" />
+          <q-tab :label="$t('backend')" name="backend" />
+          <q-tab :label="$t('mobile')" name="mobile" />
+        </q-tabs>
+      </div>
 
       <div class="projects-grid">
         <div v-for="project in filteredProjects" :key="project.id">
@@ -40,7 +42,8 @@
                   <polyline points="16 18 22 12 16 6"></polyline>
                   <polyline points="8 6 2 12 8 18"></polyline>
                 </svg>
-                <span>{{ $t('code') }}</span>
+                <span v-if="!isMobile">{{ $t('code') }}</span>
+                <q-tooltip v-else>{{ $t('code') }}</q-tooltip>
               </button>
               <button v-if="project.site" class="action-btn btn-primary" @click="openSite(project.site)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -48,7 +51,8 @@
                   <polyline points="15 3 21 3 21 9"></polyline>
                   <line x1="10" y1="14" x2="21" y2="3"></line>
                 </svg>
-                <span>{{ $t('view_site') }}</span>
+                <span v-if="!isMobile">{{ $t('view_site') }}</span>
+                <q-tooltip v-else>{{ $t('view_site') }}</q-tooltip>
               </button>
             </div>
 
@@ -62,6 +66,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
+import { useQuasar } from 'quasar';
 
 interface Project {
   id: number;
@@ -79,7 +84,8 @@ interface Props {
 }
 
 const props = defineProps<Props>();
-
+const quasar = useQuasar();
+const isMobile = computed(() => quasar.screen.lt.md);
 const filter = ref<'all' | Project['type']>('all');
 
 const filteredProjects = computed(() => {
@@ -194,14 +200,14 @@ function openSite(url: string) {
   margin: 0;
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--text-primary, #1a1a1a);
+  color: var(--color-black-white, #1a1a1a);
   line-height: 1.3;
   letter-spacing: -0.02em;
 }
 
 .project-type {
   padding: 0.25rem 0.75rem;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.19);
   border-radius: 8px;
   font-size: 0.75rem;
   font-weight: 600;
@@ -228,7 +234,7 @@ function openSite(url: string) {
 
 .tech-chip {
   padding: 0.375rem 0.75rem;
-  background: rgba(0, 0, 0, 0.04);
+  background: rgba(0, 0, 0, 0.19);
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 6px;
   font-size: 0.8rem;
@@ -301,9 +307,33 @@ function openSite(url: string) {
   transform: scale(1.1);
 }
 
+.tabs-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
 .custom-tabs {
   font-weight: 600;
   letter-spacing: 0.02em;
+  background: var(--color-timeline);
+  border-radius: 50px;
+  padding: 4px;
+  display: inline-flex;
+  width: fit-content;
+}
+
+.custom-tabs :deep(.q-tab) {
+  min-height: 40px;
+  padding: 0 24px;
+}
+
+.custom-tabs :deep(.q-tab--active) {
+  background: var(--q-primary);
+  columns: white !important;
+  box-shadow: 0 4px 12px rgba(251, 162, 37, 0.3);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {

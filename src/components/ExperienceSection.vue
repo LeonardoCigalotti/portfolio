@@ -259,7 +259,7 @@ onMounted(async () => {
 
   .timeline-item {
     width: 100%;
-    padding-left: 40px;
+    padding: 15px !important;
     text-align: left;
   }
 
@@ -269,6 +269,23 @@ onMounted(async () => {
 
   .timeline-dot {
     left: 10px;
+  }
+
+  .exp-card {
+    padding: 15px;
+    font-size: 0.95rem;
+  }
+
+  .company {
+    font-size: 1.1rem;
+  }
+
+  .role {
+    font-size: 0.9rem;
+  }
+
+  .period {
+    font-size: 0.85rem;
   }
 }
 </style>

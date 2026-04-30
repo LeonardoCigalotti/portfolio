@@ -22,11 +22,11 @@
                   {{ edu.degree }}
                 </div>
 
-                <div class="text-subtitle2 text-grey-10 ellipsis">
+                <div class="text-subtitle2 education-text-sub ellipsis">
                   {{ edu.institution }}
                 </div>
 
-                <div class="text-caption text-grey-9">
+                <div class="text-caption education-text">
                   {{ edu.year }}
                 </div>
 
@@ -140,5 +140,13 @@ const reversedEducations = computed(() => {
 
 .education-card:hover::after {
   opacity: 1;
+}
+
+.education-text {
+  color: var(--color-text, #333);
+}
+
+.education-text-sub {
+  color: var(--color-sub-texts, gray);
 }
 </style>
