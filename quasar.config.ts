@@ -11,7 +11,7 @@ export default defineConfig((/* ctx */) => {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-vite/boot-files
-    boot: [],
+    boot: ['i18n'],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#css
     css: ['app.scss'],
@@ -28,6 +28,7 @@ export default defineConfig((/* ctx */) => {
 
       'roboto-font', // optional, you are not bound to it
       'material-icons', // optional, you are not bound to it
+      'mdi-v7' 
     ],
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#build
@@ -36,6 +37,7 @@ export default defineConfig((/* ctx */) => {
         browser: 'baseline-widely-available',
         node: 'node22',
       },
+      publicPath: '/portfolio/',
 
       typescript: {
         strict: true,
@@ -99,6 +101,7 @@ export default defineConfig((/* ctx */) => {
 
       // Quasar plugins
       plugins: [],
+      iconSet: 'material-icons',
     },
 
     // animations: 'all', // --- includes all animations

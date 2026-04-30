@@ -1,1 +1,147 @@
-// app global css
+:root {
+  --orange-color-primary: #fba225;
+
+  --background-card: #eeeeee;
+  --color-sub-texts: #777;
+  --color-timeline: rgba(0, 0, 0, 0.1);
+  --color-text: #555;
+
+  --color-black-white: #000;
+  --color-white-black: #fff;
+
+  --sidebar-bg: #f5f5f5;
+  --menu-hover: rgba(0, 0, 0, 0.05);
+}
+
+body.body--dark {
+  --orange-color-primary: #e27100;
+
+  --background-card: #2b2b2b;
+  --color-sub-texts: #aaa;
+  --color-timeline: rgba(255, 255, 255, 0.15);
+  --color-text: #e5e5e5;
+
+  --color-black-white: #fff;
+  --color-white-black: #000;
+
+  --sidebar-bg: #1e1e1e;
+  --menu-hover: rgba(255, 255, 255, 0.06);
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  padding: 32px 16px;
+}
+@media (max-width: 600px) {
+  .section {
+    padding: 20px 12px;
+  }
+
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .row {
+    flex-wrap: wrap !important;
+  }
+
+  .q-card,
+  .education-card,
+  .project-card {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .q-img,
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  * {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+}
+
+.top {
+  background: var(--orange-color-primary);
+}
+
+.sidebar {
+  width: 100%;
+  max-width: 240px;
+  background: var(--sidebar-bg);
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.profile-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 3px solid rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.03);
+}
+
+body.body--dark .profile-img {
+  border: 3px solid rgba(255, 255, 255, 0.12);
+}
+
+.menu-list {
+  padding-top: 8px;
+}
+
+.menu-item {
+  padding: 14px 18px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #2c3e50;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
+}
+
+body.body--dark .menu-item {
+  color: #ecf0f1;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.menu-item:hover {
+  background: var(--menu-hover);
+  padding-left: 22px;
+}
+
+.menu-item.active {
+  font-weight: 600;
+  border-left: 3px solid var(--orange-color-primary);
+  background: var(--menu-hover);
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    max-width: 100%;
+  }
+
+  .menu-item {
+    font-size: 15px;
+    padding: 12px 16px;
+  }
+
+  .q-list {
+    min-width: 120px !important;
+  }
+}
+
+.q-menu {
+  border-radius: 10px;
+}

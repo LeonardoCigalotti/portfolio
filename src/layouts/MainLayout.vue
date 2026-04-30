@@ -1,81 +1,123 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <q-layout view="lHh Lpr lff">
+    <q-header class="top">
       <q-toolbar>
-        <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
+        <q-btn flat dense round icon="menu" aria-label="Menu" @click="leftDrawerOpen = !leftDrawerOpen" class="lt-md"/>
+        <q-space />
 
-        <q-toolbar-title> Quasar App </q-toolbar-title>
+        <q-btn flat round icon="language">
+          <q-tooltip>{{ $t('language') }}</q-tooltip>
 
-        <div>Quasar v{{ $q.version }}</div>
+          <q-menu transition-show="jump-down" transition-hide="jump-up">
+            <q-list>
+
+              <q-item clickable v-close-popup @click="setLanguage('pt')">
+                <q-item-section>Português</q-item-section>
+              </q-item>
+
+              <q-item clickable v-close-popup @click="setLanguage('en')">
+                <q-item-section>English</q-item-section>
+              </q-item>
+
+              <q-item clickable v-close-popup @click="setLanguage('es')">
+                <q-item-section>Español</q-item-section>
+              </q-item>
+
+            </q-list>
+          </q-menu>
+        </q-btn>
+
+        <q-btn flat round :icon="isDark ? 'light_mode' : 'dark_mode'" @click="toggleDark">
+          <q-tooltip>
+            {{ isDark ? $t('lightMode') : $t('darkMode') }}
+          </q-tooltip>
+        </q-btn>
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
-      <q-list>
-        <q-item-label header> Essential Links </q-item-label>
+    <q-footer class="text-white">
+    <q-toolbar>
+      <q-toolbar-title class="text-center">
+        © {{ new Date().getFullYear() }} Leonardo Cigalotti
+      </q-toolbar-title>
+    </q-toolbar>
+  </q-footer>
 
-        <EssentialLink v-for="link in linksList" :key="link.title" v-bind="link" />
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered class="sidebar" :width="200">
+
+      <div class="profile-container" @click="scrollToSection('hero')">
+        <q-img src="../assets/Me.jpg" class="profile-img" />
+      </div>
+
+      <q-list class="menu-list">
+        <EssentialLink
+          v-for="link in linksList"
+          :key="link.keyName"
+          :title="link.title"
+          :keyName="link.keyName"
+          :active="active === link.keyName"
+          @click="setActive"
+        />
       </q-list>
+
     </q-drawer>
 
     <q-page-container>
       <router-view />
     </q-page-container>
+
   </q-layout>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import EssentialLink, { type EssentialLinkProps } from 'components/EssentialLink.vue';
+import { ref, computed, nextTick } from 'vue'
+import EssentialLink from 'src/components/EssentialLink.vue'
+import { useQuasar } from 'quasar'
+import { useI18n } from 'vue-i18n'
+import type { Language, NavLink } from 'src/types/Navigation'
 
-const linksList: EssentialLinkProps[] = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev',
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework',
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev',
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev',
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev',
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev',
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev',
-  },
-];
+const active = ref<string>('about')
+const leftDrawerOpen = ref<boolean>(false)
 
-const leftDrawerOpen = ref(false);
+const quasar = useQuasar()
+const { locale, t } = useI18n()
 
-function toggleLeftDrawer() {
-  leftDrawerOpen.value = !leftDrawerOpen.value;
+const isDark = computed<boolean>(() => quasar.dark.isActive)
+
+function toggleDark(): void {
+  quasar.dark.set(!isDark.value)
 }
+
+function setLanguage(lang: Language): void {
+  locale.value = lang
+}
+
+async function setActive(key: string): Promise<void> {
+  active.value = key
+  
+  if (quasar.screen.lt.md) {
+    leftDrawerOpen.value = false
+    
+    await nextTick()
+    
+    await new Promise(resolve => setTimeout(resolve, 300))
+  }
+  
+  scrollToSection(key)
+}
+
+function scrollToSection(id: string): void {
+  document.getElementById(id)?.scrollIntoView({
+    behavior: 'smooth'
+  })
+}
+
+const linksList = computed<NavLink[]>(() => [
+  { title: t('about'), keyName: 'about' },
+  { title: t('experience'), keyName: 'experience' },
+  { title: t('project'), keyName: 'project' },
+  { title: t('skill'), keyName: 'skill' },
+  { title: t('education'), keyName: 'education' },
+  { title: t('contact'), keyName: 'contact' }
+])
 </script>
